@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-@CrossOrigin(origins = "http://127.0.0.1:8082")
+@CrossOrigin(origins = "http://localhost:8081")
 @RestController
 @RequestMapping("/api")
 public class DeviceController {
@@ -19,14 +19,14 @@ public class DeviceController {
     DeviceRepository deviceRepository;
 
     @GetMapping("/devices")
-    public ResponseEntity<List<Device>> getAllDevice(@RequestParam(required = false) String device) {
+    public ResponseEntity<List<Device>> getAllDevice(@RequestParam(required = false) String DEVEUI) {
         try{
             List<Device> devices = new ArrayList<Device>();
 
-            if (device == null)
+            if (DEVEUI == null)
                 deviceRepository.findAll().forEach(devices::add);
             else
-                deviceRepository.findByDEVEUIContaining(device).forEach(devices::add);
+                deviceRepository.findByDEVEUIContaining(DEVEUI).forEach(devices::add);
 
             if (devices.isEmpty()) {
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);

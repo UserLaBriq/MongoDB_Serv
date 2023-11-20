@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <title>Spring Boot Web App using Spring MVC and Spring Data JPA</title>
+</head>
+<body>
+<h1>Spring Boot Web App using Spring MVC and Spring Data JPA</h1>
+<hr />
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="device : ${device}">
+        <td th:text="${device.deviceNbr}"></td>
+        <td th:text="${device.temp}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

@@ -15,10 +15,8 @@ public class Device {
     @Id
     private String id;
 
-    private String DEVEUI;
+    private String deveui;
     private String timestamp;
     private int temperature;
-    private int humidite;
-    private int luminosite;
 
 }

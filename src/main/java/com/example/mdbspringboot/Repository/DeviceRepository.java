@@ -8,7 +8,7 @@ import org.springframework.data.mongodb.repository.Query;
 
 public interface DeviceRepository
     extends MongoRepository<Device, String>{
-    @Query("{ DEVEUI: ?0 }")
-    List<Device> getDevicesByDEVEUI(String DEVEUI);
+    @Query("{ deveui: ?0 }")
+    List<Device> getDevicesByDeveui(String DEVEUI);
     }
 

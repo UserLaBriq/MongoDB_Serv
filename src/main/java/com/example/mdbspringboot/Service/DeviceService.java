@@ -30,19 +30,17 @@ public class DeviceService {
         return repository.findById(Id).get();
     }
 
-    public List<Device> getDeviceByDEVEUI(String DEVEUI){
-        return repository.getDevicesByDEVEUI(DEVEUI);
+    public List<Device> getDeviceByDEVEUI(String deveui){
+        return repository.getDevicesByDeveui(deveui);
     }
 
     public Device updateDevice(Device deviceRequest){
         //get the existing document from DB
         // populate new value from request to existing object/entity/document
         Device existingDevice = repository.findById(deviceRequest.getId()).get();
-        existingDevice.setDEVEUI(deviceRequest.getDEVEUI());
+        existingDevice.setDeveui(deviceRequest.getDeveui());
         existingDevice.setTimestamp(deviceRequest.getTimestamp());
         existingDevice.setTemperature(deviceRequest.getTemperature());
-        existingDevice.setHumidite(deviceRequest.getHumidite());
-        existingDevice.setLuminosite(deviceRequest.getLuminosite());
 
         return repository.save(existingDevice);
     }

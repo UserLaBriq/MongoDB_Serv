@@ -16,10 +16,9 @@ public class Device {
     private String id;
 
     private String DEVEUI;
-    private String device;
     private String timestamp;
-    private String temperature;
-    private String humidite;
-    private String luminosite;
+    private int temperature;
+    private int humidite;
+    private int luminosite;
 
 }

@@ -39,7 +39,6 @@ public class DeviceService {
         // populate new value from request to existing object/entity/document
         Device existingDevice = repository.findById(deviceRequest.getId()).get();
         existingDevice.setDEVEUI(deviceRequest.getDEVEUI());
-        existingDevice.setDevice(deviceRequest.getDevice());
         existingDevice.setTimestamp(deviceRequest.getTimestamp());
         existingDevice.setTemperature(deviceRequest.getTemperature());
         existingDevice.setHumidite(deviceRequest.getHumidite());
